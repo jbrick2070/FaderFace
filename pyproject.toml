@@ -1,5 +1,5 @@
 [project]
-name = "comfy-apc40"
+name = "faderface"
 version = "0.1.0"
 description = "Play ComfyUI from an Akai APC40: canvas nodes for live control, and a headless pad bridge for image editing."
 readme = "README.md"
@@ -13,10 +13,10 @@ dependencies = [
 ]
 
 [project.scripts]
-comfy-apc40 = "comfy_apc40.__main__:main"
+faderface = "faderface.__main__:main"
 
 [tool.setuptools.packages.find]
-include = ["comfy_apc40*"]
+include = ["faderface*"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]

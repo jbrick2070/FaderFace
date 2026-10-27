@@ -1,4 +1,4 @@
-# comfy-apc40
+# FaderFace
 
 Play ComfyUI from an Akai APC40. Two ways in, one repo:
 
@@ -10,7 +10,7 @@ Play ComfyUI from an Akai APC40. Two ways in, one repo:
    the pads light up while they render. Ships with a **Flux 3 Klein edit
    pedalboard** skin. No browser needed.
 
-The two share one file, `comfy_apc40/apc40.py`, which knows what every control
+The two share one file, `faderface/apc40.py`, which knows what every control
 on the APC40 sends (mk2 and mk1).
 
 ## Install
@@ -89,8 +89,8 @@ feedback and running without the browser.
 ## The headless pedalboard
 
 ```bash
-python -m comfy_apc40 --list-ports
-python -m comfy_apc40 --skin mappings/flux3_klein_edit.json --port 8188 --source photo.png
+python -m faderface --list-ports
+python -m faderface --skin mappings/flux3_klein_edit.json --port 8188 --source photo.png
 ```
 
 - Pads: 40 edit presets (weather, medium, era, add things, grade, framing). A

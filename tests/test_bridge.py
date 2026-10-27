@@ -1,9 +1,9 @@
 import os
 from types import SimpleNamespace
 
-from comfy_apc40 import apc40
-from comfy_apc40.bridge import Bridge
-from comfy_apc40.skin import Skin, get_target
+from faderface import apc40
+from faderface.bridge import Bridge
+from faderface.skin import Skin, get_target
 
 ROOT = os.path.normpath(os.path.join(os.path.dirname(__file__), ".."))
 KLEIN_SKIN = os.path.join(ROOT, "mappings", "flux3_klein_edit.json")

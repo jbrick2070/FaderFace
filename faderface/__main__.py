@@ -1,4 +1,4 @@
-"""Command line entry: ``python -m comfy_apc40 --skin mappings/<skin>.json``."""
+"""Command line entry: ``python -m faderface --skin mappings/<skin>.json``."""
 from __future__ import annotations
 
 import argparse
@@ -24,7 +24,7 @@ def find_port(names, wanted: str):
 
 
 def main(argv=None) -> int:
-    parser = argparse.ArgumentParser(prog="comfy_apc40", description="Play ComfyUI from an Akai APC40.")
+    parser = argparse.ArgumentParser(prog="faderface", description="Play ComfyUI from an Akai APC40.")
     parser.add_argument("--skin", default=DEFAULT_SKIN, help="skin JSON (default: the Flux 3 Klein edit pedalboard)")
     parser.add_argument("--host", default="127.0.0.1")
     parser.add_argument("--port", type=int, default=8188, help="ComfyUI port (8188 desktop, 8000 headless)")

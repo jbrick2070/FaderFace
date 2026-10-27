@@ -2,8 +2,8 @@ import os
 
 import pytest
 
-from comfy_apc40 import skin as skin_module
-from comfy_apc40.skin import Knob, Skin, SkinError, build_prompt, get_target, resolve_target
+from faderface import skin as skin_module
+from faderface.skin import Knob, Skin, SkinError, build_prompt, get_target, resolve_target
 
 ROOT = os.path.normpath(os.path.join(os.path.dirname(__file__), ".."))
 KLEIN_SKIN = os.path.join(ROOT, "mappings", "flux3_klein_edit.json")

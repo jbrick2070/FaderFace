@@ -3,7 +3,7 @@ import os
 import subprocess
 import sys
 
-from comfy_apc40 import nodes
+from faderface import nodes
 
 ROOT = os.path.normpath(os.path.join(os.path.dirname(__file__), ".."))
 

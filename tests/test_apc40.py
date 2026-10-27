@@ -1,4 +1,4 @@
-from comfy_apc40 import apc40
+from faderface import apc40
 
 
 def test_mk2_pad_numbering_starts_bottom_left():

@@ -22,7 +22,7 @@ from . import apc40
 from .comfy_client import output_image_name
 from .skin import Skin, build_prompt
 
-log = logging.getLogger("comfy_apc40")
+log = logging.getLogger("faderface")
 
 # Button actions a skin may bind.
 ACTIONS = {
