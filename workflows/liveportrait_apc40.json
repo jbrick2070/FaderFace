@@ -1,0 +1,1802 @@
+{
+  "id": "apc40-live-portrait",
+  "revision": 0,
+  "last_node_id": 18,
+  "last_link_id": 28,
+  "nodes": [
+    {
+      "id": 1,
+      "type": "VrchMidiDeviceLoaderNode",
+      "pos": [
+        40,
+        40
+      ],
+      "size": [
+        420,
+        160
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "device_id",
+          "type": "STRING",
+          "widget": {
+            "name": "device_id"
+          },
+          "link": null
+        },
+        {
+          "name": "name",
+          "type": "STRING",
+          "widget": {
+            "name": "name"
+          },
+          "link": null
+        },
+        {
+          "name": "debug",
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "debug"
+          },
+          "link": null
+        },
+        {
+          "name": "raw_data",
+          "type": "STRING",
+          "widget": {
+            "name": "raw_data"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "RAW_DATA",
+          "type": "JSON",
+          "links": []
+        },
+        {
+          "name": "INT_CC_VALUES",
+          "type": "INT",
+          "links": []
+        },
+        {
+          "name": "FLOAT_CC_VALUES",
+          "type": "FLOAT",
+          "links": [
+            3,
+            5,
+            7,
+            9,
+            11,
+            13,
+            15,
+            17,
+            19,
+            21,
+            23,
+            25,
+            27
+          ]
+        },
+        {
+          "name": "BOOLEAN_NOTE_VALUES",
+          "type": "BOOL",
+          "links": []
+        },
+        {
+          "name": "INT_NOTE_VALUES",
+          "type": "INT",
+          "links": []
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VrchMidiDeviceLoaderNode"
+      },
+      "widgets_values": [
+        "",
+        "",
+        false,
+        ""
+      ],
+      "title": "APC40 (MIDI Device Loader)"
+    },
+    {
+      "id": 2,
+      "type": "LoadImage",
+      "pos": [
+        40,
+        260
+      ],
+      "size": [
+        320,
+        400
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "COMBO",
+          "widget": {
+            "name": "image"
+          },
+          "link": null
+        },
+        {
+          "name": "upload",
+          "type": "IMAGEUPLOAD",
+          "widget": {
+            "name": "upload"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            1
+          ]
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": []
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoadImage"
+      },
+      "widgets_values": [
+        "sample_pic_01_woman_head.png",
+        "image"
+      ],
+      "title": "portrait"
+    },
+    {
+      "id": 3,
+      "type": "ExpressionEditor",
+      "pos": [
+        1180,
+        40
+      ],
+      "size": [
+        420,
+        720
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "src_image",
+          "type": "IMAGE",
+          "link": 1
+        },
+        {
+          "name": "motion_link",
+          "type": "EDITOR_LINK",
+          "link": null
+        },
+        {
+          "name": "sample_image",
+          "type": "IMAGE",
+          "link": null
+        },
+        {
+          "name": "add_exp",
+          "type": "EXP_DATA",
+          "link": null
+        },
+        {
+          "name": "rotate_pitch",
+          "type": "FLOAT",
+          "widget": {
+            "name": "rotate_pitch"
+          },
+          "link": 4
+        },
+        {
+          "name": "rotate_yaw",
+          "type": "FLOAT",
+          "widget": {
+            "name": "rotate_yaw"
+          },
+          "link": 6
+        },
+        {
+          "name": "rotate_roll",
+          "type": "FLOAT",
+          "widget": {
+            "name": "rotate_roll"
+          },
+          "link": 8
+        },
+        {
+          "name": "blink",
+          "type": "FLOAT",
+          "widget": {
+            "name": "blink"
+          },
+          "link": 16
+        },
+        {
+          "name": "eyebrow",
+          "type": "FLOAT",
+          "widget": {
+            "name": "eyebrow"
+          },
+          "link": 14
+        },
+        {
+          "name": "wink",
+          "type": "FLOAT",
+          "widget": {
+            "name": "wink"
+          },
+          "link": 18
+        },
+        {
+          "name": "pupil_x",
+          "type": "FLOAT",
+          "widget": {
+            "name": "pupil_x"
+          },
+          "link": 10
+        },
+        {
+          "name": "pupil_y",
+          "type": "FLOAT",
+          "widget": {
+            "name": "pupil_y"
+          },
+          "link": 12
+        },
+        {
+          "name": "aaa",
+          "type": "FLOAT",
+          "widget": {
+            "name": "aaa"
+          },
+          "link": 20
+        },
+        {
+          "name": "eee",
+          "type": "FLOAT",
+          "widget": {
+            "name": "eee"
+          },
+          "link": 22
+        },
+        {
+          "name": "woo",
+          "type": "FLOAT",
+          "widget": {
+            "name": "woo"
+          },
+          "link": 24
+        },
+        {
+          "name": "smile",
+          "type": "FLOAT",
+          "widget": {
+            "name": "smile"
+          },
+          "link": 26
+        },
+        {
+          "name": "src_ratio",
+          "type": "FLOAT",
+          "widget": {
+            "name": "src_ratio"
+          },
+          "link": null
+        },
+        {
+          "name": "sample_ratio",
+          "type": "FLOAT",
+          "widget": {
+            "name": "sample_ratio"
+          },
+          "link": null
+        },
+        {
+          "name": "sample_parts",
+          "type": "COMBO",
+          "widget": {
+            "name": "sample_parts"
+          },
+          "link": null
+        },
+        {
+          "name": "crop_factor",
+          "type": "FLOAT",
+          "widget": {
+            "name": "crop_factor"
+          },
+          "link": 28
+        }
+      ],
+      "outputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "links": [
+            2
+          ]
+        },
+        {
+          "name": "motion_link",
+          "type": "EDITOR_LINK",
+          "links": []
+        },
+        {
+          "name": "save_exp",
+          "type": "EXP_DATA",
+          "links": []
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ExpressionEditor"
+      },
+      "widgets_values": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        1.0,
+        "OnlyExpression",
+        1.7
+      ],
+      "title": "Expression Editor (PHM)"
+    },
+    {
+      "id": 4,
+      "type": "VrchImageWebViewerNode",
+      "pos": [
+        1660,
+        40
+      ],
+      "size": [
+        420,
+        420
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 2
+        },
+        {
+          "name": "channel",
+          "type": "COMBO",
+          "widget": {
+            "name": "channel"
+          },
+          "link": null
+        },
+        {
+          "name": "server",
+          "type": "STRING",
+          "widget": {
+            "name": "server"
+          },
+          "link": null
+        },
+        {
+          "name": "ssl",
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "ssl"
+          },
+          "link": null
+        },
+        {
+          "name": "refresh_interval",
+          "type": "INT",
+          "widget": {
+            "name": "refresh_interval"
+          },
+          "link": null
+        },
+        {
+          "name": "fade_anim_duration",
+          "type": "INT",
+          "widget": {
+            "name": "fade_anim_duration"
+          },
+          "link": null
+        },
+        {
+          "name": "server_messages",
+          "type": "STRING",
+          "widget": {
+            "name": "server_messages"
+          },
+          "link": null
+        },
+        {
+          "name": "save_settings",
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "save_settings"
+          },
+          "link": null
+        },
+        {
+          "name": "window_width",
+          "type": "INT",
+          "widget": {
+            "name": "window_width"
+          },
+          "link": null
+        },
+        {
+          "name": "window_height",
+          "type": "INT",
+          "widget": {
+            "name": "window_height"
+          },
+          "link": null
+        },
+        {
+          "name": "show_url",
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "show_url"
+          },
+          "link": null
+        },
+        {
+          "name": "dev_mode",
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "dev_mode"
+          },
+          "link": null
+        },
+        {
+          "name": "extra_params",
+          "type": "STRING",
+          "widget": {
+            "name": "extra_params"
+          },
+          "link": null
+        },
+        {
+          "name": "url",
+          "type": "STRING",
+          "widget": {
+            "name": "url"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGES",
+          "type": "IMAGE",
+          "links": []
+        },
+        {
+          "name": "URL",
+          "type": "STRING",
+          "links": []
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VrchImageWebViewerNode"
+      },
+      "widgets_values": [
+        "1",
+        "127.0.0.1:8188",
+        false,
+        100,
+        80,
+        "",
+        false,
+        600,
+        600,
+        false,
+        false,
+        "",
+        ""
+      ],
+      "title": "Web Viewer (open for a clean window)"
+    },
+    {
+      "id": 5,
+      "type": "APC40Knob",
+      "pos": [
+        620,
+        40
+      ],
+      "size": [
+        380,
+        150
+      ],
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "cc_values",
+          "type": "FLOAT",
+          "link": 3
+        },
+        {
+          "name": "control",
+          "type": "COMBO",
+          "widget": {
+            "name": "control"
+          },
+          "link": null
+        },
+        {
+          "name": "output_min",
+          "type": "FLOAT",
+          "widget": {
+            "name": "output_min"
+          },
+          "link": null
+        },
+        {
+          "name": "output_max",
+          "type": "FLOAT",
+          "widget": {
+            "name": "output_max"
+          },
+          "link": null
+        },
+        {
+          "name": "resting",
+          "type": "FLOAT",
+          "widget": {
+            "name": "resting"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "value",
+          "type": "FLOAT",
+          "links": [
+            4
+          ]
+        },
+        {
+          "name": "raw_cc",
+          "type": "INT",
+          "links": []
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "APC40Knob"
+      },
+      "widgets_values": [
+        "device knob 1 (CC 16)",
+        -20.0,
+        20.0,
+        0.0
+      ],
+      "title": "rotate_pitch"
+    },
+    {
+      "id": 6,
+      "type": "APC40Knob",
+      "pos": [
+        620,
+        170
+      ],
+      "size": [
+        380,
+        150
+      ],
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "cc_values",
+          "type": "FLOAT",
+          "link": 5
+        },
+        {
+          "name": "control",
+          "type": "COMBO",
+          "widget": {
+            "name": "control"
+          },
+          "link": null
+        },
+        {
+          "name": "output_min",
+          "type": "FLOAT",
+          "widget": {
+            "name": "output_min"
+          },
+          "link": null
+        },
+        {
+          "name": "output_max",
+          "type": "FLOAT",
+          "widget": {
+            "name": "output_max"
+          },
+          "link": null
+        },
+        {
+          "name": "resting",
+          "type": "FLOAT",
+          "widget": {
+            "name": "resting"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "value",
+          "type": "FLOAT",
+          "links": [
+            6
+          ]
+        },
+        {
+          "name": "raw_cc",
+          "type": "INT",
+          "links": []
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "APC40Knob"
+      },
+      "widgets_values": [
+        "device knob 2 (CC 17)",
+        -20.0,
+        20.0,
+        0.0
+      ],
+      "title": "rotate_yaw"
+    },
+    {
+      "id": 7,
+      "type": "APC40Knob",
+      "pos": [
+        620,
+        300
+      ],
+      "size": [
+        380,
+        150
+      ],
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "cc_values",
+          "type": "FLOAT",
+          "link": 7
+        },
+        {
+          "name": "control",
+          "type": "COMBO",
+          "widget": {
+            "name": "control"
+          },
+          "link": null
+        },
+        {
+          "name": "output_min",
+          "type": "FLOAT",
+          "widget": {
+            "name": "output_min"
+          },
+          "link": null
+        },
+        {
+          "name": "output_max",
+          "type": "FLOAT",
+          "widget": {
+            "name": "output_max"
+          },
+          "link": null
+        },
+        {
+          "name": "resting",
+          "type": "FLOAT",
+          "widget": {
+            "name": "resting"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "value",
+          "type": "FLOAT",
+          "links": [
+            8
+          ]
+        },
+        {
+          "name": "raw_cc",
+          "type": "INT",
+          "links": []
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "APC40Knob"
+      },
+      "widgets_values": [
+        "device knob 3 (CC 18)",
+        -20.0,
+        20.0,
+        0.0
+      ],
+      "title": "rotate_roll"
+    },
+    {
+      "id": 8,
+      "type": "APC40Knob",
+      "pos": [
+        620,
+        430
+      ],
+      "size": [
+        380,
+        150
+      ],
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "cc_values",
+          "type": "FLOAT",
+          "link": 9
+        },
+        {
+          "name": "control",
+          "type": "COMBO",
+          "widget": {
+            "name": "control"
+          },
+          "link": null
+        },
+        {
+          "name": "output_min",
+          "type": "FLOAT",
+          "widget": {
+            "name": "output_min"
+          },
+          "link": null
+        },
+        {
+          "name": "output_max",
+          "type": "FLOAT",
+          "widget": {
+            "name": "output_max"
+          },
+          "link": null
+        },
+        {
+          "name": "resting",
+          "type": "FLOAT",
+          "widget": {
+            "name": "resting"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "value",
+          "type": "FLOAT",
+          "links": [
+            10
+          ]
+        },
+        {
+          "name": "raw_cc",
+          "type": "INT",
+          "links": []
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "APC40Knob"
+      },
+      "widgets_values": [
+        "device knob 4 (CC 19)",
+        -15.0,
+        15.0,
+        0.0
+      ],
+      "title": "pupil_x"
+    },
+    {
+      "id": 9,
+      "type": "APC40Knob",
+      "pos": [
+        620,
+        560
+      ],
+      "size": [
+        380,
+        150
+      ],
+      "flags": {},
+      "order": 8,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "cc_values",
+          "type": "FLOAT",
+          "link": 11
+        },
+        {
+          "name": "control",
+          "type": "COMBO",
+          "widget": {
+            "name": "control"
+          },
+          "link": null
+        },
+        {
+          "name": "output_min",
+          "type": "FLOAT",
+          "widget": {
+            "name": "output_min"
+          },
+          "link": null
+        },
+        {
+          "name": "output_max",
+          "type": "FLOAT",
+          "widget": {
+            "name": "output_max"
+          },
+          "link": null
+        },
+        {
+          "name": "resting",
+          "type": "FLOAT",
+          "widget": {
+            "name": "resting"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "value",
+          "type": "FLOAT",
+          "links": [
+            12
+          ]
+        },
+        {
+          "name": "raw_cc",
+          "type": "INT",
+          "links": []
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "APC40Knob"
+      },
+      "widgets_values": [
+        "device knob 5 (CC 20)",
+        -15.0,
+        15.0,
+        0.0
+      ],
+      "title": "pupil_y"
+    },
+    {
+      "id": 10,
+      "type": "APC40Knob",
+      "pos": [
+        620,
+        690
+      ],
+      "size": [
+        380,
+        150
+      ],
+      "flags": {},
+      "order": 9,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "cc_values",
+          "type": "FLOAT",
+          "link": 13
+        },
+        {
+          "name": "control",
+          "type": "COMBO",
+          "widget": {
+            "name": "control"
+          },
+          "link": null
+        },
+        {
+          "name": "output_min",
+          "type": "FLOAT",
+          "widget": {
+            "name": "output_min"
+          },
+          "link": null
+        },
+        {
+          "name": "output_max",
+          "type": "FLOAT",
+          "widget": {
+            "name": "output_max"
+          },
+          "link": null
+        },
+        {
+          "name": "resting",
+          "type": "FLOAT",
+          "widget": {
+            "name": "resting"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "value",
+          "type": "FLOAT",
+          "links": [
+            14
+          ]
+        },
+        {
+          "name": "raw_cc",
+          "type": "INT",
+          "links": []
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "APC40Knob"
+      },
+      "widgets_values": [
+        "device knob 6 (CC 21)",
+        -10.0,
+        15.0,
+        0.0
+      ],
+      "title": "eyebrow"
+    },
+    {
+      "id": 11,
+      "type": "APC40Knob",
+      "pos": [
+        620,
+        820
+      ],
+      "size": [
+        380,
+        150
+      ],
+      "flags": {},
+      "order": 10,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "cc_values",
+          "type": "FLOAT",
+          "link": 15
+        },
+        {
+          "name": "control",
+          "type": "COMBO",
+          "widget": {
+            "name": "control"
+          },
+          "link": null
+        },
+        {
+          "name": "output_min",
+          "type": "FLOAT",
+          "widget": {
+            "name": "output_min"
+          },
+          "link": null
+        },
+        {
+          "name": "output_max",
+          "type": "FLOAT",
+          "widget": {
+            "name": "output_max"
+          },
+          "link": null
+        },
+        {
+          "name": "resting",
+          "type": "FLOAT",
+          "widget": {
+            "name": "resting"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "value",
+          "type": "FLOAT",
+          "links": [
+            16
+          ]
+        },
+        {
+          "name": "raw_cc",
+          "type": "INT",
+          "links": []
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "APC40Knob"
+      },
+      "widgets_values": [
+        "device knob 7 (CC 22)",
+        -20.0,
+        5.0,
+        0.0
+      ],
+      "title": "blink"
+    },
+    {
+      "id": 12,
+      "type": "APC40Knob",
+      "pos": [
+        620,
+        950
+      ],
+      "size": [
+        380,
+        150
+      ],
+      "flags": {},
+      "order": 11,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "cc_values",
+          "type": "FLOAT",
+          "link": 17
+        },
+        {
+          "name": "control",
+          "type": "COMBO",
+          "widget": {
+            "name": "control"
+          },
+          "link": null
+        },
+        {
+          "name": "output_min",
+          "type": "FLOAT",
+          "widget": {
+            "name": "output_min"
+          },
+          "link": null
+        },
+        {
+          "name": "output_max",
+          "type": "FLOAT",
+          "widget": {
+            "name": "output_max"
+          },
+          "link": null
+        },
+        {
+          "name": "resting",
+          "type": "FLOAT",
+          "widget": {
+            "name": "resting"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "value",
+          "type": "FLOAT",
+          "links": [
+            18
+          ]
+        },
+        {
+          "name": "raw_cc",
+          "type": "INT",
+          "links": []
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "APC40Knob"
+      },
+      "widgets_values": [
+        "device knob 8 (CC 23)",
+        0.0,
+        25.0,
+        0.0
+      ],
+      "title": "wink"
+    },
+    {
+      "id": 13,
+      "type": "APC40Knob",
+      "pos": [
+        620,
+        1080
+      ],
+      "size": [
+        380,
+        150
+      ],
+      "flags": {},
+      "order": 12,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "cc_values",
+          "type": "FLOAT",
+          "link": 19
+        },
+        {
+          "name": "control",
+          "type": "COMBO",
+          "widget": {
+            "name": "control"
+          },
+          "link": null
+        },
+        {
+          "name": "output_min",
+          "type": "FLOAT",
+          "widget": {
+            "name": "output_min"
+          },
+          "link": null
+        },
+        {
+          "name": "output_max",
+          "type": "FLOAT",
+          "widget": {
+            "name": "output_max"
+          },
+          "link": null
+        },
+        {
+          "name": "resting",
+          "type": "FLOAT",
+          "widget": {
+            "name": "resting"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "value",
+          "type": "FLOAT",
+          "links": [
+            20
+          ]
+        },
+        {
+          "name": "raw_cc",
+          "type": "INT",
+          "links": []
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "APC40Knob"
+      },
+      "widgets_values": [
+        "track knob 1 (CC 48)",
+        -30.0,
+        120.0,
+        0.0
+      ],
+      "title": "aaa"
+    },
+    {
+      "id": 14,
+      "type": "APC40Knob",
+      "pos": [
+        620,
+        1210
+      ],
+      "size": [
+        380,
+        150
+      ],
+      "flags": {},
+      "order": 13,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "cc_values",
+          "type": "FLOAT",
+          "link": 21
+        },
+        {
+          "name": "control",
+          "type": "COMBO",
+          "widget": {
+            "name": "control"
+          },
+          "link": null
+        },
+        {
+          "name": "output_min",
+          "type": "FLOAT",
+          "widget": {
+            "name": "output_min"
+          },
+          "link": null
+        },
+        {
+          "name": "output_max",
+          "type": "FLOAT",
+          "widget": {
+            "name": "output_max"
+          },
+          "link": null
+        },
+        {
+          "name": "resting",
+          "type": "FLOAT",
+          "widget": {
+            "name": "resting"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "value",
+          "type": "FLOAT",
+          "links": [
+            22
+          ]
+        },
+        {
+          "name": "raw_cc",
+          "type": "INT",
+          "links": []
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "APC40Knob"
+      },
+      "widgets_values": [
+        "track knob 2 (CC 49)",
+        -20.0,
+        15.0,
+        0.0
+      ],
+      "title": "eee"
+    },
+    {
+      "id": 15,
+      "type": "APC40Knob",
+      "pos": [
+        620,
+        1340
+      ],
+      "size": [
+        380,
+        150
+      ],
+      "flags": {},
+      "order": 14,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "cc_values",
+          "type": "FLOAT",
+          "link": 23
+        },
+        {
+          "name": "control",
+          "type": "COMBO",
+          "widget": {
+            "name": "control"
+          },
+          "link": null
+        },
+        {
+          "name": "output_min",
+          "type": "FLOAT",
+          "widget": {
+            "name": "output_min"
+          },
+          "link": null
+        },
+        {
+          "name": "output_max",
+          "type": "FLOAT",
+          "widget": {
+            "name": "output_max"
+          },
+          "link": null
+        },
+        {
+          "name": "resting",
+          "type": "FLOAT",
+          "widget": {
+            "name": "resting"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "value",
+          "type": "FLOAT",
+          "links": [
+            24
+          ]
+        },
+        {
+          "name": "raw_cc",
+          "type": "INT",
+          "links": []
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "APC40Knob"
+      },
+      "widgets_values": [
+        "track knob 3 (CC 50)",
+        -20.0,
+        15.0,
+        0.0
+      ],
+      "title": "woo"
+    },
+    {
+      "id": 16,
+      "type": "APC40Knob",
+      "pos": [
+        620,
+        1470
+      ],
+      "size": [
+        380,
+        150
+      ],
+      "flags": {},
+      "order": 15,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "cc_values",
+          "type": "FLOAT",
+          "link": 25
+        },
+        {
+          "name": "control",
+          "type": "COMBO",
+          "widget": {
+            "name": "control"
+          },
+          "link": null
+        },
+        {
+          "name": "output_min",
+          "type": "FLOAT",
+          "widget": {
+            "name": "output_min"
+          },
+          "link": null
+        },
+        {
+          "name": "output_max",
+          "type": "FLOAT",
+          "widget": {
+            "name": "output_max"
+          },
+          "link": null
+        },
+        {
+          "name": "resting",
+          "type": "FLOAT",
+          "widget": {
+            "name": "resting"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "value",
+          "type": "FLOAT",
+          "links": [
+            26
+          ]
+        },
+        {
+          "name": "raw_cc",
+          "type": "INT",
+          "links": []
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "APC40Knob"
+      },
+      "widgets_values": [
+        "track knob 4 (CC 51)",
+        -0.3,
+        1.3,
+        0.0
+      ],
+      "title": "smile"
+    },
+    {
+      "id": 17,
+      "type": "APC40Knob",
+      "pos": [
+        620,
+        1600
+      ],
+      "size": [
+        380,
+        150
+      ],
+      "flags": {},
+      "order": 16,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "cc_values",
+          "type": "FLOAT",
+          "link": 27
+        },
+        {
+          "name": "control",
+          "type": "COMBO",
+          "widget": {
+            "name": "control"
+          },
+          "link": null
+        },
+        {
+          "name": "output_min",
+          "type": "FLOAT",
+          "widget": {
+            "name": "output_min"
+          },
+          "link": null
+        },
+        {
+          "name": "output_max",
+          "type": "FLOAT",
+          "widget": {
+            "name": "output_max"
+          },
+          "link": null
+        },
+        {
+          "name": "resting",
+          "type": "FLOAT",
+          "widget": {
+            "name": "resting"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "value",
+          "type": "FLOAT",
+          "links": [
+            28
+          ]
+        },
+        {
+          "name": "raw_cc",
+          "type": "INT",
+          "links": []
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "APC40Knob"
+      },
+      "widgets_values": [
+        "master fader (CC 14)",
+        1.5,
+        2.5,
+        1.7
+      ],
+      "title": "crop_factor"
+    },
+    {
+      "id": 18,
+      "type": "Note",
+      "pos": [
+        40,
+        700
+      ],
+      "size": [
+        440,
+        420
+      ],
+      "flags": {},
+      "order": 17,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "properties": {
+        "Node name for S&R": "Note"
+      },
+      "widgets_values": [
+        "device knob 1  -> rotate_pitch\ndevice knob 2  -> rotate_yaw\ndevice knob 3  -> rotate_roll\ndevice knob 4  -> pupil_x\ndevice knob 5  -> pupil_y\ndevice knob 6  -> eyebrow\ndevice knob 7  -> blink\ndevice knob 8  -> wink\ntrack knob 1   -> aaa\ntrack knob 2   -> eee\ntrack knob 3   -> woo\ntrack knob 4   -> smile\nmaster fader   -> crop_factor\n\nFaders are unused: the MIDI loader keys CC by number only,\nand every fader sends CC 7. Knobs are all distinct numbers.\n\n1. Plug in the APC40 BEFORE opening this tab (Web MIDI).\n2. Centre the device knobs so the head starts straight.\n3. Extra options -> Auto Queue -> instant, then Queue.\n4. Open the Web Viewer button for a clean full-size window."
+      ],
+      "title": "APC40 cheat sheet"
+    }
+  ],
+  "links": [
+    [
+      1,
+      2,
+      0,
+      3,
+      0,
+      "IMAGE"
+    ],
+    [
+      2,
+      3,
+      0,
+      4,
+      0,
+      "IMAGE"
+    ],
+    [
+      3,
+      1,
+      2,
+      5,
+      0,
+      "FLOAT"
+    ],
+    [
+      4,
+      5,
+      0,
+      3,
+      4,
+      "FLOAT"
+    ],
+    [
+      5,
+      1,
+      2,
+      6,
+      0,
+      "FLOAT"
+    ],
+    [
+      6,
+      6,
+      0,
+      3,
+      5,
+      "FLOAT"
+    ],
+    [
+      7,
+      1,
+      2,
+      7,
+      0,
+      "FLOAT"
+    ],
+    [
+      8,
+      7,
+      0,
+      3,
+      6,
+      "FLOAT"
+    ],
+    [
+      9,
+      1,
+      2,
+      8,
+      0,
+      "FLOAT"
+    ],
+    [
+      10,
+      8,
+      0,
+      3,
+      10,
+      "FLOAT"
+    ],
+    [
+      11,
+      1,
+      2,
+      9,
+      0,
+      "FLOAT"
+    ],
+    [
+      12,
+      9,
+      0,
+      3,
+      11,
+      "FLOAT"
+    ],
+    [
+      13,
+      1,
+      2,
+      10,
+      0,
+      "FLOAT"
+    ],
+    [
+      14,
+      10,
+      0,
+      3,
+      8,
+      "FLOAT"
+    ],
+    [
+      15,
+      1,
+      2,
+      11,
+      0,
+      "FLOAT"
+    ],
+    [
+      16,
+      11,
+      0,
+      3,
+      7,
+      "FLOAT"
+    ],
+    [
+      17,
+      1,
+      2,
+      12,
+      0,
+      "FLOAT"
+    ],
+    [
+      18,
+      12,
+      0,
+      3,
+      9,
+      "FLOAT"
+    ],
+    [
+      19,
+      1,
+      2,
+      13,
+      0,
+      "FLOAT"
+    ],
+    [
+      20,
+      13,
+      0,
+      3,
+      12,
+      "FLOAT"
+    ],
+    [
+      21,
+      1,
+      2,
+      14,
+      0,
+      "FLOAT"
+    ],
+    [
+      22,
+      14,
+      0,
+      3,
+      13,
+      "FLOAT"
+    ],
+    [
+      23,
+      1,
+      2,
+      15,
+      0,
+      "FLOAT"
+    ],
+    [
+      24,
+      15,
+      0,
+      3,
+      14,
+      "FLOAT"
+    ],
+    [
+      25,
+      1,
+      2,
+      16,
+      0,
+      "FLOAT"
+    ],
+    [
+      26,
+      16,
+      0,
+      3,
+      15,
+      "FLOAT"
+    ],
+    [
+      27,
+      1,
+      2,
+      17,
+      0,
+      "FLOAT"
+    ],
+    [
+      28,
+      17,
+      0,
+      3,
+      19,
+      "FLOAT"
+    ]
+  ],
+  "groups": [],
+  "config": {},
+  "extra": {
+    "ds": {
+      "scale": 0.6,
+      "offset": [
+        40,
+        40
+      ]
+    }
+  },
+  "version": 0.4
+}

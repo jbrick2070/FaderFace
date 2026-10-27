@@ -1,0 +1,23 @@
+[project]
+name = "comfy-apc40"
+version = "0.1.0"
+description = "Play ComfyUI from an Akai APC40: canvas nodes for live control, and a headless pad bridge for image editing."
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.10"
+dependencies = [
+    "mido>=1.3",
+    "python-rtmidi>=1.5",
+    "requests>=2.31",
+    "websocket-client>=1.6",
+]
+
+[project.scripts]
+comfy-apc40 = "comfy_apc40.__main__:main"
+
+[tool.setuptools.packages.find]
+include = ["comfy_apc40*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q -p no:cacheprovider --import-mode=importlib"

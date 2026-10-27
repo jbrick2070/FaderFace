@@ -1,0 +1,323 @@
+{
+  "1": {
+    "class_type": "VrchMidiDeviceLoaderNode",
+    "_meta": {
+      "title": "APC40 (MIDI Device Loader)"
+    },
+    "inputs": {
+      "device_id": "",
+      "name": "",
+      "debug": false,
+      "raw_data": ""
+    }
+  },
+  "2": {
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "portrait"
+    },
+    "inputs": {
+      "image": "sample_pic_01_woman_head.png"
+    }
+  },
+  "3": {
+    "class_type": "ExpressionEditor",
+    "_meta": {
+      "title": "Expression Editor (PHM)"
+    },
+    "inputs": {
+      "rotate_pitch": [
+        "5",
+        0
+      ],
+      "rotate_yaw": [
+        "6",
+        0
+      ],
+      "rotate_roll": [
+        "7",
+        0
+      ],
+      "blink": [
+        "11",
+        0
+      ],
+      "eyebrow": [
+        "10",
+        0
+      ],
+      "wink": [
+        "12",
+        0
+      ],
+      "pupil_x": [
+        "8",
+        0
+      ],
+      "pupil_y": [
+        "9",
+        0
+      ],
+      "aaa": [
+        "13",
+        0
+      ],
+      "eee": [
+        "14",
+        0
+      ],
+      "woo": [
+        "15",
+        0
+      ],
+      "smile": [
+        "16",
+        0
+      ],
+      "src_ratio": 1.0,
+      "sample_ratio": 1.0,
+      "sample_parts": "OnlyExpression",
+      "crop_factor": [
+        "17",
+        0
+      ],
+      "src_image": [
+        "2",
+        0
+      ]
+    }
+  },
+  "4": {
+    "class_type": "VrchImageWebViewerNode",
+    "_meta": {
+      "title": "Web Viewer (open for a clean window)"
+    },
+    "inputs": {
+      "channel": "1",
+      "server": "127.0.0.1:8188",
+      "ssl": false,
+      "refresh_interval": 100,
+      "fade_anim_duration": 80,
+      "server_messages": "",
+      "save_settings": false,
+      "window_width": 600,
+      "window_height": 600,
+      "show_url": false,
+      "dev_mode": false,
+      "extra_params": "",
+      "url": "",
+      "images": [
+        "3",
+        0
+      ]
+    }
+  },
+  "5": {
+    "class_type": "APC40Knob",
+    "_meta": {
+      "title": "rotate_pitch"
+    },
+    "inputs": {
+      "control": "device knob 1 (CC 16)",
+      "output_min": -20.0,
+      "output_max": 20.0,
+      "resting": 0.0,
+      "cc_values": [
+        "1",
+        2
+      ]
+    }
+  },
+  "6": {
+    "class_type": "APC40Knob",
+    "_meta": {
+      "title": "rotate_yaw"
+    },
+    "inputs": {
+      "control": "device knob 2 (CC 17)",
+      "output_min": -20.0,
+      "output_max": 20.0,
+      "resting": 0.0,
+      "cc_values": [
+        "1",
+        2
+      ]
+    }
+  },
+  "7": {
+    "class_type": "APC40Knob",
+    "_meta": {
+      "title": "rotate_roll"
+    },
+    "inputs": {
+      "control": "device knob 3 (CC 18)",
+      "output_min": -20.0,
+      "output_max": 20.0,
+      "resting": 0.0,
+      "cc_values": [
+        "1",
+        2
+      ]
+    }
+  },
+  "8": {
+    "class_type": "APC40Knob",
+    "_meta": {
+      "title": "pupil_x"
+    },
+    "inputs": {
+      "control": "device knob 4 (CC 19)",
+      "output_min": -15.0,
+      "output_max": 15.0,
+      "resting": 0.0,
+      "cc_values": [
+        "1",
+        2
+      ]
+    }
+  },
+  "9": {
+    "class_type": "APC40Knob",
+    "_meta": {
+      "title": "pupil_y"
+    },
+    "inputs": {
+      "control": "device knob 5 (CC 20)",
+      "output_min": -15.0,
+      "output_max": 15.0,
+      "resting": 0.0,
+      "cc_values": [
+        "1",
+        2
+      ]
+    }
+  },
+  "10": {
+    "class_type": "APC40Knob",
+    "_meta": {
+      "title": "eyebrow"
+    },
+    "inputs": {
+      "control": "device knob 6 (CC 21)",
+      "output_min": -10.0,
+      "output_max": 15.0,
+      "resting": 0.0,
+      "cc_values": [
+        "1",
+        2
+      ]
+    }
+  },
+  "11": {
+    "class_type": "APC40Knob",
+    "_meta": {
+      "title": "blink"
+    },
+    "inputs": {
+      "control": "device knob 7 (CC 22)",
+      "output_min": -20.0,
+      "output_max": 5.0,
+      "resting": 0.0,
+      "cc_values": [
+        "1",
+        2
+      ]
+    }
+  },
+  "12": {
+    "class_type": "APC40Knob",
+    "_meta": {
+      "title": "wink"
+    },
+    "inputs": {
+      "control": "device knob 8 (CC 23)",
+      "output_min": 0.0,
+      "output_max": 25.0,
+      "resting": 0.0,
+      "cc_values": [
+        "1",
+        2
+      ]
+    }
+  },
+  "13": {
+    "class_type": "APC40Knob",
+    "_meta": {
+      "title": "aaa"
+    },
+    "inputs": {
+      "control": "track knob 1 (CC 48)",
+      "output_min": -30.0,
+      "output_max": 120.0,
+      "resting": 0.0,
+      "cc_values": [
+        "1",
+        2
+      ]
+    }
+  },
+  "14": {
+    "class_type": "APC40Knob",
+    "_meta": {
+      "title": "eee"
+    },
+    "inputs": {
+      "control": "track knob 2 (CC 49)",
+      "output_min": -20.0,
+      "output_max": 15.0,
+      "resting": 0.0,
+      "cc_values": [
+        "1",
+        2
+      ]
+    }
+  },
+  "15": {
+    "class_type": "APC40Knob",
+    "_meta": {
+      "title": "woo"
+    },
+    "inputs": {
+      "control": "track knob 3 (CC 50)",
+      "output_min": -20.0,
+      "output_max": 15.0,
+      "resting": 0.0,
+      "cc_values": [
+        "1",
+        2
+      ]
+    }
+  },
+  "16": {
+    "class_type": "APC40Knob",
+    "_meta": {
+      "title": "smile"
+    },
+    "inputs": {
+      "control": "track knob 4 (CC 51)",
+      "output_min": -0.3,
+      "output_max": 1.3,
+      "resting": 0.0,
+      "cc_values": [
+        "1",
+        2
+      ]
+    }
+  },
+  "17": {
+    "class_type": "APC40Knob",
+    "_meta": {
+      "title": "crop_factor"
+    },
+    "inputs": {
+      "control": "master fader (CC 14)",
+      "output_min": 1.5,
+      "output_max": 2.5,
+      "resting": 1.7,
+      "cc_values": [
+        "1",
+        2
+      ]
+    }
+  }
+}
