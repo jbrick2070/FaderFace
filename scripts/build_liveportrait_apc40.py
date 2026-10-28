@@ -20,6 +20,7 @@ from __future__ import annotations
 
 import json
 import os
+import uuid
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 OUT_DIR = os.path.normpath(os.path.join(HERE, "..", "workflows"))
@@ -109,7 +110,8 @@ class Graph:
             clean = {k: v for k, v in node.items() if not k.startswith("_")}
             nodes.append(clean)
         return {
-            "id": "apc40-live-portrait",
+            # The frontend validates this as a UUID; derive a stable one from the name.
+            "id": str(uuid.uuid5(uuid.NAMESPACE_URL, "faderface/liveportrait_apc40")),
             "revision": 0,
             "last_node_id": self._next_node - 1,
             "last_link_id": self._next_link - 1,
