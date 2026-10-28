@@ -15,6 +15,9 @@ on the APC40 sends (mk2 and mk1).
 
 ## Install
 
+**Quick start on Windows:** double-click `scripts/start_comfy.bat`. It starts ComfyUI on
+http://127.0.0.1:8000 with the packs this repo's workflows need loaded.
+
 Clone or junction the repo into `custom_nodes` and restart ComfyUI. The canvas
 nodes need two more packs, both from ComfyUI Manager or GitHub:
 
