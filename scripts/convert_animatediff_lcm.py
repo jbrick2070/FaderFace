@@ -203,6 +203,14 @@ def convert(path, out_name, drop_rife=True):
         if all(inp.get("link") is None for inp in node["inputs"] if inp["name"] in ("images", "mask")):
             g.remove_node(node["id"])
 
+    # BiRefNetRMBG grew two widgets (sensitivity after model, unload_model before
+    # background) since the file was saved; positional values would land one off.
+    for node in [n for n in g.nodes.values() if n["type"] == "BiRefNetRMBG"]:
+        wv = node["widgets_values"]
+        if isinstance(wv, list) and len(wv) == 7:
+            model, mask_blur, mask_offset, invert, refine, background, colour = wv
+            node["widgets_values"] = [model, 1.0, mask_blur, mask_offset, invert, refine, False, background, colour]
+
     # Model names, stale previews
     for node in g.nodes.values():
         wv = node.get("widgets_values")
