@@ -63,9 +63,29 @@ batch render you want knobs that only set values and one deliberate button
 that queues. That is exactly ControlFreak's shape, so it is the right tool
 for this graph.
 
-## Subgraph fold
+## Subgraph fold: the desk node
 
-Once the plain copies run, select the whole render engine in the canvas and
-convert it to a subgraph, then promote the widgets above onto the parent
-node. One tidy node, twelve handles, nothing else on the canvas. The frontend
-owns the subgraph format, so do the fold there, not in a text editor.
+`workflows/animatediff_lcm_desk.json` (local, gitignored like its source) is
+part 1 folded into ONE node, "AnimateDiff LCM desk", made in the ComfyUI
+frontend: select all, *Convert to Subgraph*, then promote the handles below
+onto the parent. Nothing else is on the canvas, and ControlFreak maps the
+parent's widgets like any other node's.
+
+| Handle | Inner widget |
+|---|---|
+| prompt, negative | the two CLIP Text Encode texts |
+| top, middle, bottom, mask_rgb (+ upload buttons) | the four Load Image pickers |
+| seed | base KSampler seed (all three samplers shared one value) |
+| weight_top, weight_middle, weight_bottom | the three IPAdapter Batch weights |
+| motion_scale | AnimateDiff loader |
+| steps | base KSampler |
+| denoise_base, denoise_stage2, denoise_stage3 | the three KSamplers |
+| frames | Empty Latent Image batch_size |
+| output_scale | first Image Scale By scale_by |
+
+To redo the fold on a fresh conversion, in the browser console with the part 1
+graph open: `app.canvas.selectItems()`, run the command
+`Comfy.Graph.ConvertToSubgraph`, then for each handle
+`subgraph.addInput(name, type).connect(innerNode.inputs[widgetSlot], innerNode)`
+and `subgraph.renameInput(input, name)` for the auto-promoted ones. The
+frontend owns the subgraph format; do not hand-write it.
