@@ -197,6 +197,12 @@ def convert(path, out_name, drop_rife=True):
                 g.remove_node(dst_id)
         g.remove_node(node["id"])
 
+    # Output nodes nothing feeds (the part 2 file ships one stray VideoCombine);
+    # the server refuses a prompt that contains them.
+    for node in [n for n in list(g.nodes.values()) if n["type"] in ("VHS_VideoCombine", "PreviewImage", "MaskPreview", "SaveImage")]:
+        if all(inp.get("link") is None for inp in node["inputs"] if inp["name"] in ("images", "mask")):
+            g.remove_node(node["id"])
+
     # Model names, stale previews
     for node in g.nodes.values():
         wv = node.get("widgets_values")
