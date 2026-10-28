@@ -13,7 +13,7 @@
       ],
       "size": [
         420,
-        160
+        300
       ],
       "flags": {},
       "order": 0,
@@ -109,7 +109,7 @@
       "type": "LoadImage",
       "pos": [
         40,
-        260
+        400
       ],
       "size": [
         320,
@@ -1541,7 +1541,7 @@
       "type": "Note",
       "pos": [
         40,
-        700
+        860
       ],
       "size": [
         440,
@@ -1556,7 +1556,7 @@
         "Node name for S&R": "Note"
       },
       "widgets_values": [
-        "device knob 1  -> rotate_pitch\ndevice knob 2  -> rotate_yaw\ndevice knob 3  -> rotate_roll\ndevice knob 4  -> pupil_x\ndevice knob 5  -> pupil_y\ndevice knob 6  -> eyebrow\ndevice knob 7  -> blink\ndevice knob 8  -> wink\ntrack knob 1   -> aaa\ntrack knob 2   -> eee\ntrack knob 3   -> woo\ntrack knob 4   -> smile\nmaster fader   -> crop_factor\n\nFaders are unused: the MIDI loader keys CC by number only,\nand every fader sends CC 7. Knobs are all distinct numbers.\n\n1. Plug in the APC40 BEFORE opening this tab (Web MIDI).\n2. Centre the device knobs so the head starts straight.\n3. Extra options -> Auto Queue -> instant, then Queue.\n4. Open the Web Viewer button for a clean full-size window."
+        "device knob 1  -> rotate_pitch\ndevice knob 2  -> rotate_yaw\ndevice knob 3  -> rotate_roll\ndevice knob 4  -> pupil_x\ndevice knob 5  -> pupil_y\ndevice knob 6  -> eyebrow\ndevice knob 7  -> blink\ndevice knob 8  -> wink\ntrack knob 1   -> aaa\ntrack knob 2   -> eee\ntrack knob 3   -> woo\ntrack knob 4   -> smile\nmaster fader   -> crop_factor\n\nFaders are unused: the MIDI loader keys CC by number only,\nand every fader sends CC 7. Knobs are all distinct numbers.\n\n1. Plug in the APC40 BEFORE opening this tab (Web MIDI).\n2. Centre the device knobs so the head starts straight.\n3. Auto Queue -> change (NOT instant: instant re-runs forever and strobes).\n4. Open the Web Viewer button for a clean full-size window."
       ],
       "title": "APC40 cheat sheet"
     }

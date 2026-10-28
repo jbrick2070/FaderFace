@@ -60,7 +60,7 @@ CHEAT_SHEET = "\n".join(
        "and every fader sends CC 7. Knobs are all distinct numbers.",
        "", "1. Plug in the APC40 BEFORE opening this tab (Web MIDI).",
        "2. Centre the device knobs so the head starts straight.",
-       "3. Extra options -> Auto Queue -> instant, then Queue.",
+       "3. Auto Queue -> change (NOT instant: instant re-runs forever and strobes).",
        "4. Open the Web Viewer button for a clean full-size window."]
 )
 
@@ -144,7 +144,7 @@ def build():
     g = Graph()
 
     midi = g.add(
-        "VrchMidiDeviceLoaderNode", "APC40 (MIDI Device Loader)", (40, 40), (420, 160),
+        "VrchMidiDeviceLoaderNode", "APC40 (MIDI Device Loader)", (40, 40), (420, 300),
         inputs=[widget_input("device_id", "STRING"), widget_input("name", "STRING"),
                 widget_input("debug", "BOOLEAN"), widget_input("raw_data", "STRING")],
         outputs=[{"name": "RAW_DATA", "type": "JSON"}, {"name": "INT_CC_VALUES", "type": "INT"},
@@ -155,7 +155,7 @@ def build():
     )
 
     portrait = g.add(
-        "LoadImage", "portrait", (40, 260), (320, 400),
+        "LoadImage", "portrait", (40, 400), (320, 400),
         inputs=[widget_input("image", "COMBO"), widget_input("upload", "IMAGEUPLOAD")],
         outputs=[{"name": "IMAGE", "type": "IMAGE"}, {"name": "MASK", "type": "MASK"}],
         widgets=[PORTRAIT, "image"],
@@ -212,7 +212,7 @@ def build():
         g.link(knob, 0, editor, target, "FLOAT")
 
     g.add(
-        "Note", "APC40 cheat sheet", (40, 700), (440, 420),
+        "Note", "APC40 cheat sheet", (40, 860), (440, 420),
         inputs=[], outputs=[], widgets=[CHEAT_SHEET], api=False,
     )
     return g
