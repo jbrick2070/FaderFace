@@ -2,9 +2,10 @@
 
 Play ComfyUI from an Akai APC40. Two ways in, one repo:
 
-1. **Canvas nodes** (`APC40 Knob`, `APC40 Pad`) for workflows that run live in
-   the ComfyUI browser tab with Auto Queue. Ships with an **APC40 Live Portrait**
-   workflow: knobs move a face's head, eyes, brows and mouth in real time.
+1. **Canvas nodes** (`APC40 Knob`, `APC40 Pad`) for workflows in the ComfyUI
+   browser tab, plus a small extension that queues one run per knob move.
+   Ships with an **APC40 Live Portrait** workflow: knobs move a face's head,
+   eyes, brows and mouth, at about four frames a second.
 2. **A headless pad bridge** for image editing. Each of the 40 pads is a prompt
    preset, knobs bend the sampler, every edit can chain on the last output, and
    the pads light up while they render. Ships with a **Flux 3 Klein edit
@@ -12,6 +13,29 @@ Play ComfyUI from an Akai APC40. Two ways in, one repo:
 
 The two share one file, `faderface/apc40.py`, which knows what every control
 on the APC40 sends (mk2 and mk1).
+
+## What this experiment found
+
+This started as "can ComfyUI be a live instrument?". The honest answer, measured
+on an RTX 5080 laptop, is not really:
+
+- **A face puppet works, but it is clip-rate.** Every knob move goes from the
+  browser through ComfyUI's queue and back, about a quarter second per run, so
+  four or five frames a second at best. The model itself is far faster; the
+  queue is the ceiling.
+- **AnimateDiff is a render, not a performance.** The converted AnimateDiff-LCM
+  graphs take about eight minutes for a 24-frame clip from cold and about four
+  minutes for 16 frames once the models are loaded. The APC40 there is a mixing
+  desk: set the strengths, press queue, wait, compare. It cannot steer a clip
+  that is already playing.
+- **ComfyUI's own Auto Queue does not suit MIDI.** `instant` re-runs forever and
+  the preview strobes; `change` ignores the MIDI loader's hidden value write.
+  That is why `web/faderface_queue.js` exists.
+
+What each part is good for: ComfyUI as the clip factory, shaped by knobs; a
+separate program for anything that must follow a fader while it plays. If you
+want real-time mixing with an APC40, play pre-rendered clips in a live video
+tool and keep ComfyUI for making them.
 
 ## Install
 
