@@ -114,9 +114,11 @@ loader nodes in `workflows/flux3_klein_edit_api.json` for other weights.
 - Live Portrait on the knobs: proven with the APC40 mkII in hand on 2026-10-27.
   Web MIDI picked the controller up, each knob move queued one run, and the
   head turned with device knob 2 at about a quarter second per frame.
-- AnimateDiff-LCM mixing desk: the converted part 1 graph renders headless on
-  the 5080 (24 frames, three stages, 1008x1464, about eight minutes cold).
-  See `docs/animatediff_mixing_desk.md` for the ControlFreak layout.
+- AnimateDiff-LCM mixing desk: both converted graphs render on the 5080
+  (part 1: 24 frames, three stages, 1008x1464, eight minutes cold; part 2:
+  video-to-video chain plus regional conditioning, twelve minutes), and the
+  folded desk node renders through the frontend (16 frames, four minutes
+  warm). See `docs/animatediff_mixing_desk.md` for the ControlFreak layout.
 - Bridge and skins: 30 offline tests, fake MIDI ports, fake client. Not yet
   run against the controller.
 - mk2 LED colour indexes are from Akai's table, not yet checked by eye.
