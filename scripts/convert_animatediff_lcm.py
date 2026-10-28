@@ -211,6 +211,14 @@ def convert(path, out_name, drop_rife=True):
             model, mask_blur, mask_offset, invert, refine, background, colour = wv
             node["widgets_values"] = [model, 1.0, mask_blur, mask_offset, invert, refine, False, background, colour]
 
+    # The AnimateDiff loader lost a trailing string widget since the file was
+    # saved; a five-value node against four declared widgets trips the OTR
+    # pack's load guard.
+    for node in [n for n in g.nodes.values() if n["type"] == "ADE_AnimateDiffLoaderWithContext"]:
+        wv = node["widgets_values"]
+        if isinstance(wv, list) and len(wv) == 5 and wv[-1] == "":
+            node["widgets_values"] = wv[:4]
+
     # Model names, stale previews
     for node in g.nodes.values():
         wv = node.get("widgets_values")
