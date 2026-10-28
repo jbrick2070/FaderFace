@@ -111,11 +111,12 @@ loader nodes in `workflows/flux3_klein_edit_api.json` for other weights.
 
 ## Status
 
-- Live Portrait graph: validates and executes on a headless server with
-  synthetic MIDI (two knob positions produce two different faces).
-- Bridge and skins: 30 offline tests, fake MIDI ports, fake client.
-- Not yet done with the controller in hand: Web MIDI pickup in the browser, mk2
-  LED colour indexes (tuned from Akai's table, not by eye), the bridge's live loop.
+- Live Portrait on the knobs: proven with the APC40 mkII in hand on 2026-10-27.
+  Web MIDI picked the controller up, each knob move queued one run, and the
+  head turned with device knob 2 at about a quarter second per frame.
+- Bridge and skins: 30 offline tests, fake MIDI ports, fake client. Not yet
+  run against the controller.
+- mk2 LED colour indexes are from Akai's table, not yet checked by eye.
 
 ## Tests
 
