@@ -60,7 +60,7 @@ CHEAT_SHEET = "\n".join(
        "and every fader sends CC 7. Knobs are all distinct numbers.",
        "", "1. Plug in the APC40 BEFORE opening this tab (Web MIDI).",
        "2. Centre the device knobs so the head starts straight.",
-       "3. Auto Queue -> change (NOT instant: instant re-runs forever and strobes).",
+       "3. Leave Auto Queue OFF. FaderFace queues a run each time a knob moves.",
        "4. Open the Web Viewer button for a clean full-size window."]
 )
 

@@ -44,7 +44,7 @@ list as **apc40_live_portrait**), then:
 
 1. Check the **APC40 (MIDI Device Loader)** node shows the controller's name.
 2. Centre the eight device knobs so the head starts straight.
-3. Auto Queue -> **change**, then Run once. Not "instant": that re-runs the graph forever and the preview strobes.
+3. Leave **Auto Queue off**. FaderFace queues one run per knob move (its browser extension listens to the controller). Press Run once to load the models.
 4. Click the Web Viewer node's button for a clean, full-size window.
 
 | Control | Expression input | Range |
