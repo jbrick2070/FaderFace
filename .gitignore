@@ -6,3 +6,6 @@ dist/
 build/
 .venv/
 *.secret
+
+# Converted copies of paid (Patreon) workflows stay local; only the converter ships.
+workflows/animatediff_lcm_*.json
